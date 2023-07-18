@@ -31,11 +31,11 @@ def getSpaceliftToken():
     return token
 
 # function to make the API call
-def runQuery(trigger): 
+def triggerRun(trigger): 
     request = requests.post(baseURL, json={'query': trigger}, headers=headers)
     print(json.dumps(request.json(), indent=4))
 
 # Execute the API call
 jwt = getSpaceliftToken()
 headers = {"Authorization": f"Bearer {jwt}"}
-runQuery(trigger)
+triggerRun(triggerMutation)
