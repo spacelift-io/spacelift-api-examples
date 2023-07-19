@@ -8,14 +8,15 @@ keyId = os.environ.get('SL_KEY_ID')
 keySecret = os.environ.get('SL_KEY_SECRET')
 baseURL = os.environ.get('SL_BASE_URL')
 tokenMutatationVariables = {'keyId': keyId, 'keySecret': keySecret}
+triggerVariables = {'stack': sys.argv[1]} 
 
 #The mutation to get the Bearer Token
 tokenMutation = """mutation GetSpaceliftToken($keyId: ID!, $keySecret: String!) {apiKeyUser(id: $keyId, secret: $keySecret) {jwt}}"""
 
-#The mutation to trigger a track run based on ID
+#The mutation to trigger a tracked run based on ID
 triggerMutation = """
-mutation {
-        runTrigger(stack: "tf-aws") {
+mutation ($stack : ID!){
+        runTrigger(stack: $stack) {
         id
         title
         type
@@ -32,7 +33,7 @@ def getSpaceliftToken():
 
 # function to make the API call
 def triggerRun(trigger): 
-    request = requests.post(baseURL, json={'query': trigger}, headers=headers)
+    request = requests.post(baseURL, json={'query': trigger, 'variables': triggerVariables }, headers=headers)
     print(json.dumps(request.json(), indent=4))
 
 # Execute the API call
