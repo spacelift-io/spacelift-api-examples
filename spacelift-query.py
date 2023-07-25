@@ -4,9 +4,9 @@ import json
 import os
 
 # Set variables
-keyId = os.environ.get('SL_KEY_ID')
-keySecret = os.environ.get('SL_KEY_SECRET')
-baseURL = os.environ.get('SL_BASE_URL')
+keyId = os.environ.get('SPACELIFT_KEY_ID')
+keySecret = os.environ.get('SPACELIFT_KEY_SECRET')
+baseURL = os.environ.get('SPACELIFT_BASE_URL')
 mutatationVariables = {'keyId': keyId, 'keySecret': keySecret}
 
 #The GraphQL mutation to get the Bearer Token
