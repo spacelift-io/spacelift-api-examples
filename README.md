@@ -1,3 +1,3 @@
-# spacelift-api-examples
+# Spacelift API Examples
 
-This repository contains a collection of Python scripts that can be re-purposed (if needed) and interact with Spacelift's API. 
+This repository contains a collection of examples that show how to interact with Spacelift's API.

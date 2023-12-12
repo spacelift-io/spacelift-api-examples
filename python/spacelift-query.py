@@ -1,3 +1,7 @@
+# Usage:
+#  - Run `pip install -r requirements.txt` to install dependencies
+#  - Run `python spacelift-query.py`
+
 import json
 import os
 import requests
@@ -52,9 +56,7 @@ def get_jwt_token():
 def execute_query(jwt_token, query, variables):
     headers = {"Authorization": f"Bearer {jwt_token}"}
 
-    response = requests.post(
-        api_key_endpoint, json={"query": query, "variables": variables}, headers=headers
-    )
+    response = requests.post(api_key_endpoint, json={"query": query, "variables": variables}, headers=headers)
 
     return response.json()
 
