@@ -1,0 +1,4 @@
+{
+  "query": "query GetStack($id: ID!) {stack(id: $id) {id,name}}",
+  "variables": { "id": "demos-setup" }
+}
