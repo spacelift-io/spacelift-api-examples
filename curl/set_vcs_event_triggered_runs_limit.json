@@ -1,0 +1,4 @@
+{
+    "query": "mutation accountUpdateVCSEventTriggeredRunsLimit($limit: Int!) { accountUpdateVCSEventTriggeredRunsLimit(limit: $limit) {}}",
+    "variables": { "limit": 1000 }
+}

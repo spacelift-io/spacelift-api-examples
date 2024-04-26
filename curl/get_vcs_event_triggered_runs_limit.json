@@ -1,0 +1,4 @@
+{
+    "query": "query GetVcsEventTriggeredRunsLimit() { vcsEventTriggeredRunsLimit() }",
+    "variables": {}
+}
